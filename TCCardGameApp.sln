@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36915.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCardGame", "TCCardGame\TCCardGame.csproj", "{FB923E4E-BE1C-4AC0-89B9-1BCF5032BD46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCardGameLibrary", "TCCardGameLibrary\TCCardGameLibrary.csproj", "{B6DC65DE-494F-4E7D-BC55-46D70559CDD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FB923E4E-BE1C-4AC0-89B9-1BCF5032BD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB923E4E-BE1C-4AC0-89B9-1BCF5032BD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB923E4E-BE1C-4AC0-89B9-1BCF5032BD46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DC65DE-494F-4E7D-BC55-46D70559CDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DC65DE-494F-4E7D-BC55-46D70559CDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DC65DE-494F-4E7D-BC55-46D70559CDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DC65DE-494F-4E7D-BC55-46D70559CDD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

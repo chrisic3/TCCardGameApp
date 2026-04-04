@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TCCardGameLibrary.Models;
 
 namespace TCCardGame
 {
@@ -10,6 +11,9 @@ namespace TCCardGame
     {
         static void Main(string[] args)
         {
+            PokerDeckModel poker = new PokerDeckModel();
+            
+            Console.ReadLine();
         }
     }
 }
