@@ -11,11 +11,32 @@ namespace TCCardGameLibrary.Models
         public PokerDeckModel()
         {
             CreateDeck();
+            ShuffleDeck();
         }
 
         public override List<PlayingCardModel> DealCards()
         {
-            throw new NotImplementedException();
+            List<PlayingCardModel> output = new List<PlayingCardModel>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                output.Add(DrawOneCard());
+            }
+
+            return output;
+        }
+
+        public List<PlayingCardModel> SwapCards(List<PlayingCardModel> discard)
+        {
+            List<PlayingCardModel> output = new List<PlayingCardModel>();
+
+            foreach (PlayingCardModel card in discard)
+            {
+                discardPile.Add(card);
+                output.Add(DrawOneCard());
+            }
+
+            return output;
         }
     }
 }

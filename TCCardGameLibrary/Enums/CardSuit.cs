@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCardGameLibrary.Enums
 {
-    internal enum CardSuit
+    public enum CardSuit
     {
         Hearts,
         Diamonds,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCardGameLibrary.Enums
 {
-    internal enum CardValues
+    public enum CardValues
     {
         Ace,
         Two,

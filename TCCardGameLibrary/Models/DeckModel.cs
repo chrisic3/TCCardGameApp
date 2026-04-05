@@ -9,26 +9,27 @@ namespace TCCardGameLibrary.Models
 {
     public abstract class DeckModel
     {
-        private List<PlayingCardModel> fullDeck = new List<PlayingCardModel>();
-        private List<PlayingCardModel> drawPile = new List<PlayingCardModel>();
-        private List<PlayingCardModel> discardPile = new List<PlayingCardModel>();
+        protected List<PlayingCardModel> deck = new List<PlayingCardModel>();
+        //private List<PlayingCardModel> drawPile = new List<PlayingCardModel>();
+        protected List<PlayingCardModel> discardPile = new List<PlayingCardModel>();
 
         protected void CreateDeck()
         {
-            fullDeck.Clear();
+            deck.Clear();
 
             for (int suit = 0; suit < 4; suit++)
             {
                 for (int value = 0; value < 13; value++)
                 {
-                    fullDeck.Add(new PlayingCardModel() { Suit = (CardSuit)suit, Value = (CardValues)value });
+                    deck.Add(new PlayingCardModel() { Suit = (CardSuit)suit, Value = (CardValues)value });
                 }
             }
         }
 
-        protected virtual void ShuffleDeck()
+        public virtual void ShuffleDeck()
         {
-
+            Random rand = new Random();
+            deck = deck.OrderBy(x => rand.Next()).ToList();
         }
 
         // Abstract because each game type deals differently
@@ -36,7 +37,10 @@ namespace TCCardGameLibrary.Models
 
         protected PlayingCardModel DrawOneCard()
         {
-            throw new NotImplementedException();
+            //PlayingCardModel output = deck.Take(1).First();
+            PlayingCardModel output = deck[0];
+            deck.Remove(output);
+            return output;
         }
     }
 }
