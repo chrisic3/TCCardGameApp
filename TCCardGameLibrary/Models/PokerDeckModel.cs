@@ -26,17 +26,28 @@ namespace TCCardGameLibrary.Models
             return output;
         }
 
-        public List<PlayingCardModel> SwapCards(List<PlayingCardModel> discard)
+        public void SwapCards(List<PlayingCardModel> hand, List<PlayingCardModel> discard)
         {
-            List<PlayingCardModel> output = new List<PlayingCardModel>();
-
             foreach (PlayingCardModel card in discard)
             {
                 discardPile.Add(card);
-                output.Add(DrawOneCard());
+                hand.Remove(card);
+                hand.Add(DrawOneCard());
             }
-
-            return output;
         }
+
+        // Original version
+        //public List<PlayingCardModel> SwapCards(List<PlayingCardModel> discard)
+        //{
+        //    List<PlayingCardModel> output = new List<PlayingCardModel>();
+
+        //    foreach (PlayingCardModel card in discard)
+        //    {
+        //        discardPile.Add(card);
+        //        output.Add(DrawOneCard());
+        //    }
+
+        //    return output;
+        //}
     }
 }

@@ -11,40 +11,76 @@ namespace TCCardGame
     {
         static void Main(string[] args)
         {
-            PokerDeckModel poker = new PokerDeckModel();
-            List<PlayingCardModel> hand = poker.DealCards();
+            Console.Write("Which game demo would you like to see? (poker/blackjack): ");
+            string input = Console.ReadLine();
+            Console.WriteLine();
 
-            // Display initial hand
-            foreach (PlayingCardModel card in hand)
+            if (input.ToLower() == "poker")
             {
-                Console.WriteLine($"{card.Value} of {card.Suit}");
+                PokerDeckModel poker = new PokerDeckModel();
+                List<PlayingCardModel> hand = poker.DealCards();
+
+                // Display initial hand
+                Console.WriteLine("Initial hand:");
+                foreach (PlayingCardModel card in hand)
+                {
+                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                }
+
+                Console.WriteLine();
+
+                // Cards selected to discard
+                int[] cardsToDiscard = { 2, 4 };
+                Console.WriteLine("Swapping cards at index's 2 and 4:");
+
+                List<PlayingCardModel> discard = new List<PlayingCardModel>();
+                foreach (int card in cardsToDiscard) // Populate list of cards to discard
+                {
+                    discard.Add(hand[card]);
+                }
+
+                // Swap cards and add new ones to hand
+                poker.SwapCards(hand, discard);
+
+                // Display new hand
+                foreach (PlayingCardModel card in hand)
+                {
+                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                }
+            }
+            else if (input.ToLower() == "blackjack")
+            {
+                BlackjackDeckModel blackjack = new BlackjackDeckModel();
+                List<PlayingCardModel> hand = blackjack.DealCards();
+
+                // Display initial hand
+                Console.WriteLine("Initial hand:");
+                foreach (PlayingCardModel card in hand)
+                {
+                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                }
+
+                Console.WriteLine();
+
+                Console.Write("Would you like to hit? (yes/no): ");
+                string choice = Console.ReadLine();
+
+                if (choice.ToLower() == "yes")
+                {
+                    blackjack.Hit(hand);
+                }
+
+                Console.WriteLine();
+
+                Console.WriteLine("Final hand:");
+                foreach (PlayingCardModel card in hand)
+                {
+                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                }
             }
 
             Console.WriteLine();
-
-            // Cards selected to discard
-            int[] cardsToDiscard = { 2, 4 };
-
-            List<PlayingCardModel> discard = new List<PlayingCardModel>();
-            foreach (int card in cardsToDiscard) // Populate list of cards to discard
-            {
-                discard.Add(hand[card]);
-            }
-
-            // Remove cards from hand
-            foreach (PlayingCardModel card in discard)
-            {
-                hand.Remove(card);
-            }
-
-            // TODO: swap cards and add new ones to hand
-            
-            // Display new hand
-            foreach (PlayingCardModel card in hand)
-            {
-                Console.WriteLine($"{card.Value} of {card.Suit}");
-            }
-
+            Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
         }
     }

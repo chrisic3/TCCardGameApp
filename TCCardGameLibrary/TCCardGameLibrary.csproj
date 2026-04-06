@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Enums\CardSuit.cs" />
     <Compile Include="Enums\CardValues.cs" />
+    <Compile Include="Models\BlackjackDeckModel.cs" />
     <Compile Include="Models\DeckModel.cs" />
     <Compile Include="Models\PlayingCardModel.cs" />
     <Compile Include="Models\PokerDeckModel.cs" />
