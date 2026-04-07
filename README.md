@@ -1,6 +1,6 @@
 # TCCardGameApp
 
-This is based on a mini project by Tim Corey in his C# Fundamentals course.
+This is based on a mini project by Tim Corey in his C# Mastercourse.
 It is mainly to demonstrate the use of access modifiers, abstract classes, and method overriding.
 
 Changes I made:
